@@ -14,14 +14,14 @@ public class ZooInfo {
             service = Executors.newSingleThreadExecutor();
 
             System.out.println("Begin");
-            service.submit(() -> System.out.println("Printing zoo inventory"));
+            service.submit(() -> System.out.println("Printing first inventory"));
             service.submit(() -> {
                 for (int i = 0; i < 3; i++) {
                     System.out.println("Printing record: " + i);
                 }
             });
 
-            service.submit(() -> System.out.println("Printing zoo inventory"));
+            service.submit(() -> System.out.println("Printing second inventory"));
             System.out.println("end");
         } finally {
             if (service != null) {
